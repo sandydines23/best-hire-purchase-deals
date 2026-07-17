@@ -1,0 +1,124 @@
+/* ==========================================================================
+   Ranking page — layout specific to the Hire Purchase comparison page
+   ========================================================================== */
+
+/* ---- Filter pills above the comparison table ---- */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+.filter-bar button {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.5em 1.15em;
+  border-radius: 999px;
+  border: 1.5px solid var(--color-border);
+  background: #fff;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all 160ms ease;
+}
+.filter-bar button.is-active,
+.filter-bar button:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary-dark);
+  background: var(--color-primary-light);
+}
+
+/* ---- Eligibility checker panel ---- */
+.eligibility-panel {
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 2.25rem;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+.eligibility-copy .icon-badge { background: rgba(217,164,65,0.16); color: var(--color-accent-dark); }
+.eligibility-checklist { list-style: none; padding: 0; margin: 1.25rem 0 0; }
+.eligibility-checklist li {
+  display: flex;
+  gap: 0.6em;
+  align-items: flex-start;
+  font-size: 0.92rem;
+  color: var(--color-text);
+  margin-bottom: 0.6em;
+}
+.eligibility-checklist li svg { flex-shrink: 0; color: var(--color-success); margin-top: 2px; }
+.eligibility-form { background: #fff; border-radius: var(--radius); padding: 1.75rem; box-shadow: var(--shadow-md); border: 1px solid var(--color-border); }
+.eligibility-form .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.eligibility-form .soft-check-note { font-size: 0.78rem; color: var(--color-text-muted); text-align: center; margin-top: 0.9rem; }
+
+@media (max-width: 900px) {
+  .eligibility-panel { grid-template-columns: 1fr; }
+  .eligibility-form .field-row { grid-template-columns: 1fr; }
+}
+
+/* ---- Bad credit callout ---- */
+.callout {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  background: var(--color-primary-light);
+  border: 1px solid #CFE3D9;
+  border-radius: var(--radius);
+  padding: 1.75rem 2rem;
+}
+.callout .icon-badge { flex-shrink: 0; background: #fff; }
+.callout-actions { margin-left: auto; flex-shrink: 0; }
+
+@media (max-width: 767px) {
+  .callout { flex-direction: column; align-items: flex-start; }
+  .callout-actions { margin-left: 0; }
+}
+
+/* ---- Comparison vs cross-link box ---- */
+.cross-link-box {
+  border: 1.5px dashed var(--color-accent);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: #FFFBF2;
+}
+.cross-link-box p { margin: 0; }
+.cross-link-box strong { color: var(--color-primary-dark); }
+
+@media (max-width: 767px) {
+  .cross-link-box { flex-direction: column; align-items: flex-start; }
+}
+
+/* ---- Segmented "best for" badges on table rows ---- */
+.best-for-badges { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.3rem; }
+
+/* ---- Sticky mobile CTA bar ---- */
+.mobile-sticky-cta {
+  display: none;
+}
+@media (max-width: 767px) {
+  .mobile-sticky-cta {
+    display: flex;
+    position: sticky;
+    bottom: 0;
+    z-index: 40;
+    background: #fff;
+    border-top: 1px solid var(--color-border);
+    padding: 0.75rem 1.25rem;
+    box-shadow: 0 -4px 16px rgba(0,0,0,0.08);
+  }
+}
+
+/* ---- Regulatory disclosure block ---- */
+.disclosure-block {
+  background: var(--color-bg-alt);
+  border-left: 4px solid var(--color-primary);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 1.5rem 1.75rem;
+}
+.disclosure-block h4 { margin-bottom: 0.5em; }
